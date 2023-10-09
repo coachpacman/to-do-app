@@ -1,0 +1,21 @@
+ul {
+  width: 1000px;
+}
+
+ul > li{
+  list-style-type: none;
+  /* display: block; */
+  /* left: 0px;
+  padding-left: 0pt;
+  margin-left: 0; */
+  /* border: solid; */
+}
+
+[type=checkbox] {
+  float: left;
+  /* align: left; */
+  /* padding-left: 0;
+  margin-left: 0;
+  left: 0;
+  display:  */
+}
