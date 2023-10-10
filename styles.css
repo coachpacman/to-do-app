@@ -12,13 +12,19 @@ ul > li{
   /* border: solid; */
 }
 
-ul > li > input[type=checkbox]  {
+/* input[type="checkbox"] {
+  outline: 3px solid red
+} */
+
+
+
+/* ul > li + input[type=checkbox]  {
   text-decoration: line-through;
 }
 
 input[type=checkbox]:checked + span {
   text-decoration: line-through;
-}
+} */
 
 /* [type=checkbox] {
  float: none;
