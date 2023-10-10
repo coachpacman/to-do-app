@@ -1,10 +1,3 @@
-// var toDoValue;
-
-// function getInputValue() {
-//   toDoValue = document.getElementById("to-do-input").value
-//   console.log(toDoValue)
-// }
-
 function addToDoItem() {
   //get text from input field
   var toDoValue = document.getElementById("to-do-input").value
@@ -30,4 +23,3 @@ function addToDoItem() {
   document.getElementById("to-do-input").value=""
 
 }
-

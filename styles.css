@@ -4,11 +4,20 @@ ul {
 
 ul > li{
   list-style-type: none;
+  /* text-decoration: line-through; */
   /* display: block; */
   /* left: 0px;
   padding-left: 0pt;
   margin-left: 0; */
   /* border: solid; */
+}
+
+ul > li > input[type=checkbox]  {
+  text-decoration: line-through;
+}
+
+input[type=checkbox]:checked + span {
+  text-decoration: line-through;
 }
 
 /* [type=checkbox] {
