@@ -31,13 +31,14 @@ function strikeThrough() {
   var unchecked = document.querySelector("input[type='checkbox']");
   if (checked) {
     checked.addEventListener("change", function(e) {
-      var span = e.target.nextSibling;
+      var span = e.target.nextElementSibling;
       span.style.textDecoration="line-through"
     })
     console.log("a")
-  } else {
+  } else if(unchecked) {
     unchecked.addEventListener("change", function(e) {
-      var span = e.target.nextSibling;
+      var span = e.target.nextElementSibling;
+      console.log(span)
       span.style.textDecoration=""
     })
     console.log("b")
