@@ -12,7 +12,7 @@ function addToDoItem() {
   //create list item using input field value
   var listItem = document.createElement("li");
   var text = document.createTextNode(`${toDoValue}`);
-  listItem.appendChild(text);
+  
 
   //create checkbox for list item
   var checkbox = document.createElement("input");
@@ -22,6 +22,8 @@ function addToDoItem() {
   var itemsList = document.getElementById("itemsList");
   itemsList.appendChild(listItem);
   listItem.appendChild(checkbox);
+  listItem.appendChild(text);
+  // listItem.appendChild(text);
   
   
   //clear input field

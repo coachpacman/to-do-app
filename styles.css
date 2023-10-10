@@ -11,11 +11,11 @@ ul > li{
   /* border: solid; */
 }
 
-[type=checkbox] {
-  float: left;
-  /* align: left; */
-  /* padding-left: 0;
+/* [type=checkbox] {
+ float: none;
+  align: left; 
+  padding-left: 0;
   margin-left: 0;
   left: 0;
-  display:  */
-}
+  display:  
+} */
