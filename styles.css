@@ -1,36 +1,15 @@
+body {
+  text-align: center;
+}
+
 ul {
-  width: 1000px;
+  width: 100%;
 }
 
 ul > li{
   list-style-type: none;
-  /* text-decoration: line-through; */
-  /* display: block; */
-  /* left: 0px;
-  padding-left: 0pt;
-  margin-left: 0; */
-  /* border: solid; */
 }
 
-/* input[type="checkbox"] {
-  outline: 3px solid red
-} */
-
-
-
-/* ul > li + input[type=checkbox]  {
-  text-decoration: line-through;
+#toDoItemsContainer {
+  display: flex;
 }
-
-input[type=checkbox]:checked + span {
-  text-decoration: line-through;
-} */
-
-/* [type=checkbox] {
- float: none;
-  align: left; 
-  padding-left: 0;
-  margin-left: 0;
-  left: 0;
-  display:  
-} */
