@@ -11,28 +11,45 @@ function addToDoItem() {
 
   //create checkbox for list item
   var checkbox = document.createElement("input");
-  checkbox.setAttribute("type", "checkbox", "id", "test-input", "onClick", "strikeThrough()");
-  checkbox.setAttribute("id", "test-input");
-  // checkbox.setAttribute("onClick", "strikeThrough()");
-  checkbox.addEventListener("change", function(e) {
+  checkbox.setAttribute("type", "checkbox");
+
+  //event listener for displaying delete button if checked
+  checkbox.addEventListener("click", function(e) {
       var span = e.target.nextElementSibling;
       if (e.target.checked) {
         span.style.textDecoration = "line-through";
+        delButton.style.display = "";
       } else {
-        span.style.textDecoration = "";
+        span.style.textDecoration = ""; 
+        delButton.style.display = "none";
       }
     })
   
+  //create delete button for list item
+  var delButton = document.createElement("button");
+  var buttonLabel = document.createTextNode("delete");
+  delButton.setAttribute("value", "delete")
+  delButton.appendChild(buttonLabel);
+  delButton.style.display = "none"
+
+  //event listener for removing list item
+  delButton.addEventListener("click", function(e) {
+    listItem.remove()
+  })
+
   //add list item to html
   var itemsList = document.getElementById("itemsList");
   itemsList.appendChild(listItem);
   listItem.appendChild(checkbox);
-  listItem.appendChild(span);  
+  listItem.appendChild(span);
+  listItem.appendChild(delButton);
   
   //clear input field
   document.getElementById("to-do-input").value=""
 
 }
+
+
 //function for striking out text if checkbox is clicked
 // function strikeThrough(e) {
   
