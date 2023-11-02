@@ -1,93 +1,49 @@
 function addToDoItem() {
+  
+  //get text from input field, then clear it
+  var toDoValue = document.getElementById("to-do-input").value;
+  document.getElementById("to-do-input").value="";
+  
   //create list item using input field value
   var listItem = document.createElement("li");
   
-  //get text from input field
-  var toDoValue = document.getElementById("to-do-input").value
-  var text = document.createTextNode(`${toDoValue}`);
-  
-  var span = document.createElement("span");
-  span.appendChild(text);
-
   //create checkbox for list item
   var checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
-
-  //event listener for displaying delete button if checked
-  checkbox.addEventListener("click", function(e) {
-      var span = e.target.nextElementSibling;
-      if (e.target.checked) {
-        span.style.textDecoration = "line-through";
-        delButton.style.display = "";
-      } else {
-        span.style.textDecoration = ""; 
-        delButton.style.display = "none";
-      }
-    })
+  listItem.appendChild(checkbox);
   
+  //create todo text
+  var text = document.createTextNode(`${toDoValue}`);
+  var toDoText = document.createElement("span");
+  toDoText.appendChild(text);
+  listItem.appendChild(toDoText);
+
   //create delete button for list item
   var delButton = document.createElement("button");
   var buttonLabel = document.createTextNode("delete");
-  delButton.setAttribute("value", "delete")
+  delButton.setAttribute("value", "delete");
   delButton.appendChild(buttonLabel);
-  delButton.style.display = "none"
+  delButton.style.display = "none";
+  listItem.appendChild(delButton);
 
   //event listener for removing list item
   delButton.addEventListener("click", function(e) {
-    listItem.remove()
-  })
+    listItem.remove();
+  });
+
+
+  //event listener for displaying delete button if checked
+  checkbox.addEventListener("click", function(e) {
+    if (e.target.checked) {
+      toDoText.style.textDecoration = "line-through";
+      delButton.style.display = "";
+    } else {
+      toDoText.style.textDecoration = ""; 
+      delButton.style.display = "none";
+    }
+  });
 
   //add list item to html
   var itemsList = document.getElementById("itemsList");
   itemsList.appendChild(listItem);
-  listItem.appendChild(checkbox);
-  listItem.appendChild(span);
-  listItem.appendChild(delButton);
-  
-  //clear input field
-  document.getElementById("to-do-input").value=""
-
 }
-
-
-//function for striking out text if checkbox is clicked
-// function strikeThrough(e) {
-  
-//   // Add event listeners to all checkboxes when the page loads
-//   var checkboxes = document.querySelectorAll("input[type='checkbox']");
-//   checkboxes.forEach(function(checkbox) {
-//     checkbox.addEventListener("change", function(e) {
-//       var span = e.target.nextElementSibling;
-//       if (e.target.checked) {
-//         span.style.textDecoration = "line-through";
-//       } else {
-//         span.style.textDecoration = "";
-//       }
-//     });
-//   });
-
-  
-  
-  // var span = e.target.nextElementSibling;
-  //   if (e.target.checked) {
-  //     span.style.textDecoration = "line-through";
-  //   } else {
-  //     span.style.textDecoration = "";
-  //   }
-
-  // var checked = document.querySelector("input[type='checkbox']:checked");
-  // var unchecked = document.querySelector("input[type='checkbox']");
-  // if (checked) {
-  //   checked.addEventListener("change", function(e) {
-  //     var span = e.target.nextElementSibling;
-  //     span.style.textDecoration="line-through"
-  //   })
-  //   console.log("a")
-  // } else if(unchecked) {
-  //   unchecked.addEventListener("change", function(e) {
-  //     var span = e.target.nextElementSibling;
-  //     console.log(span)
-  //     span.style.textDecoration=""
-  //   })
-  //   console.log("b")
-  // }
